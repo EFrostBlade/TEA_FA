@@ -7,7 +7,7 @@ using AEAssist;
 using System.Numerics;
 namespace ScriptTest;
 
-public class 左右刀判断 : ITriggerScript
+public class 激光飞轮 : ITriggerScript
 {
     public bool Check(ScriptEnv scriptEnv, ITriggerCondParams condParams)
     {
