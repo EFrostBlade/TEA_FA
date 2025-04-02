@@ -7,7 +7,7 @@ using AEAssist;
 using System.Numerics;
 namespace ScriptTest;
 
-public class st拉飞机面向 : ITriggerScript
+public class mt拉残暴正义号面向 : ITriggerScript
 {
     public bool Completed = false;
     // 锁对象
@@ -30,26 +30,20 @@ public class st拉飞机面向 : ITriggerScript
             {
                 lock (_executionLock)
                 {
-                    var target = Svc.Objects.FirstOrDefault(obj => obj.DataId == 11342);
+                    var target = Svc.Objects.FirstOrDefault(obj => obj.DataId == 11340);
                     if (target != null)
                     {
                         Vector3 targetPosition = target.Position;
-                        Vector3 targetTargetPosition = new Vector3(95, 0, 111);
+                        Vector3 targetTargetPosition = new Vector3(95, 0, 89);
                         Vector3 direction = Vector3.Normalize(targetTargetPosition - targetPosition);
                         Vector3 stPoison = targetTargetPosition + direction * 3;
                         Vector3 d2Poison = new Vector3(targetPosition.X, 0.00f, targetPosition.Z);
-                        if (Share.DebugPointWithText.ContainsKey("ST"))
+                        if (Share.DebugPointWithText.ContainsKey("MT"))
                         {
-                            Share.DebugPointWithText.Remove("ST");
+                            Share.DebugPointWithText.Remove("MT");
                         }
-                        if (Share.DebugPointWithText.ContainsKey("D2"))
-                        {
-                            Share.DebugPointWithText.Remove("D2");
-                        }
-                        Share.DebugPointWithText.Add("ST", stPoison);
-                        RemoteControlHelper.SetPos("ST", stPoison);
-                        Share.DebugPointWithText.Add("D2", d2Poison);
-                        RemoteControlHelper.SetPos("D2", d2Poison);
+                        Share.DebugPointWithText.Add("MT", stPoison);
+                        RemoteControlHelper.SetPos("MT", stPoison);
                         Completed = true;
                     }
                 }
@@ -57,7 +51,7 @@ public class st拉飞机面向 : ITriggerScript
             catch
             {
                 // 处理异常
-                LogHelper.PrintError("st拉飞机面向面向处理异常");
+                LogHelper.PrintError("mt拉残暴正义号面向处理异常");
             }
             finally
             {
